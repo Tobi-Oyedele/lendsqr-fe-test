@@ -1,2 +1,20 @@
-# lendsqr-fe-test
-Frontend engineering assessment for Lendsqr built with React, TypeScript, and SCSS.
+# Lendsqr Frontend Engineering Assessment
+
+This repository contains a frontend application built as part of the Lendsqr frontend engineering assessment.
+
+The project is built using **React**, **TypeScript**, and **SCSS**, with a focus on clean architecture, scalability, responsiveness, and best practices.
+
+## Tech Stack
+- React
+- TypeScript
+- SCSS (CSS Modules)
+- React Router
+- Vite
+
+## Project Scope
+- Login page
+- Dashboard
+- Users page (data from mock API with 500 records)
+- User details page (using localStorage / IndexedDB)
+
+Further implementation details and architectural decisions will be documented as development progresses.
