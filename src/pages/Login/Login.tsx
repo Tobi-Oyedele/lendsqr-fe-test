@@ -28,6 +28,7 @@ export default function Login() {
   const navigate = useNavigate();
 
   const [form, setForm] = useState<FormState>({ email: "", password: "" });
+  const [showForgotInfo, setShowForgotInfo] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   const [touched, setTouched] = useState<{ email: boolean; password: boolean }>(
@@ -184,12 +185,16 @@ export default function Login() {
               <button
                 type="button"
                 className={styles.forgot}
-                onClick={() =>
-                  alert("Forgot password flow not provided in assessment.")
-                }
+                onClick={() => setShowForgotInfo(true)}
               >
                 FORGOT PASSWORD?
               </button>
+
+              {showForgotInfo && (
+                <p className={styles.helperText}>
+                  Password recovery is not available in this assessment.
+                </p>
+              )}
 
               <button
                 type="submit"
