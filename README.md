@@ -5,6 +5,7 @@ This repository contains a frontend application built as part of the Lendsqr fro
 The project is built using **React**, **TypeScript**, and **SCSS**, with a focus on clean architecture, scalability, responsiveness, and best practices.
 
 ## Tech Stack
+
 - React
 - TypeScript
 - SCSS (CSS Modules)
@@ -12,9 +13,15 @@ The project is built using **React**, **TypeScript**, and **SCSS**, with a focus
 - Vite
 
 ## Project Scope
+
 - Login page
 - Dashboard
 - Users page (data from mock API with 500 records)
 - User details page (using localStorage / IndexedDB)
 
-Further implementation details and architectural decisions will be documented as development progresses.
+## Getting Started
+
+```bash
+npm install
+npm run dev
+```
