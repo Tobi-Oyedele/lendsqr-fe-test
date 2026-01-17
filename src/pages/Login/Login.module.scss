@@ -112,17 +112,17 @@
   height: 48px;
   padding: 0 14px;
   border-radius: 6px;
-  border: 1px solid rgba(84, 95, 125, 0.15);
+  border: 1px solid $color-muted-light;
   background: $color-surface;
   outline: none;
 
   &::placeholder {
-    color: rgba(84, 95, 125, 0.6);
+    color: $color-muted;
   }
 
   &:focus {
     border-color: $color-primary;
-    box-shadow: 0 0 0 3px rgba(57, 205, 204, 0.15);
+    box-shadow: 0 0 0 2px $color-primary;
   }
 }
 
@@ -154,7 +154,7 @@
 
   &:focus-visible {
     border-radius: 6px;
-    box-shadow: 0 0 0 3px rgba(57, 205, 204, 0.2);
+    box-shadow: 0 0 0 3px $color-primary;
   }
 }
 
@@ -187,7 +187,7 @@
 
   &:focus-visible {
     outline: none;
-    box-shadow: 0 0 0 4px rgba(57, 205, 204, 0.25);
+    box-shadow: 0 0 0 4px $color-primary;
   }
 }
 
@@ -212,5 +212,5 @@
 .helperText {
   margin-top: 8px;
   font-size: 12px;
-  color: rgba(84, 95, 125, 0.8);
+  color: $color-text;
 }
