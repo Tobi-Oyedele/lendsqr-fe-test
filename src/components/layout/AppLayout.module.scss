@@ -53,10 +53,13 @@
 
 .drawer {
   width: min(86vw, 320px);
-  height: 100%;
+  height: 100vh;
   background: $color-surface;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.22);
   padding: 10px 0;
+
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 .drawerTop {
