@@ -1,21 +1,15 @@
-import { useEffect, useState } from "react";
+import { Outlet } from "react-router-dom";
+import Header from "../../components/layout/Header";
+import Sidebar from "../../components/layout/SideBar";
 import styles from "./AppLayout.module.scss";
-import Header from "./Header";
-import Sidebar from "./SideBar";
+import { useState } from "react";
 
-export default function AppLayout({ children }: { children: React.ReactNode }) {
-  const [sidebarOpen, setSidebarOpen] = useState(false);
-
-  useEffect(() => {
-    document.body.style.overflow = sidebarOpen ? "hidden" : "";
-    return () => {
-      document.body.style.overflow = "";
-    };
-  }, [sidebarOpen]);
+export default function AppLayout() {
+  const [drawerOpen, setDrawerOpen] = useState(false);
 
   return (
     <div className={styles.layout}>
-      <Header onOpenSidebar={() => setSidebarOpen(true)} />
+      <Header onOpenSidebar={() => setDrawerOpen(true)} />
 
       {/* Desktop sidebar */}
       <aside className={styles.sidebarDesktop}>
@@ -23,35 +17,32 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
       </aside>
 
       {/* Mobile drawer */}
-      {sidebarOpen && (
+      {drawerOpen && (
         <div
           className={styles.drawerOverlay}
-          role="presentation"
-          onClick={() => setSidebarOpen(false)}
+          onClick={() => setDrawerOpen(false)}
         >
-          <aside
-            className={styles.drawer}
-            role="dialog"
-            aria-modal="true"
-            aria-label="Sidebar navigation"
-            onClick={(e) => e.stopPropagation()}
-          >
+          <div className={styles.drawer} onClick={(e) => e.stopPropagation()}>
             <div className={styles.drawerTop}>
               <button
                 className={styles.closeBtn}
-                onClick={() => setSidebarOpen(false)}
+                onClick={() => setDrawerOpen(false)}
                 aria-label="Close sidebar"
+                type="button"
               >
                 ✕
               </button>
             </div>
-            <Sidebar onNavigate={() => setSidebarOpen(false)} />
-          </aside>
+
+            <Sidebar onNavigate={() => setDrawerOpen(false)} />
+          </div>
         </div>
       )}
 
-      <main className={styles.main} role="main">
-        <div className={styles.content}>{children}</div>
+      <main className={styles.main}>
+        <div className={styles.content}>
+          <Outlet />
+        </div>
       </main>
     </div>
   );

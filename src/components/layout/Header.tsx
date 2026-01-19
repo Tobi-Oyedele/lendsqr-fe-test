@@ -1,6 +1,7 @@
 import styles from "./Header.module.scss";
 import logo from "../../assets/logo.svg";
-import { Bell } from "lucide-react";
+import { Bell, ChevronDown, Search } from "lucide-react";
+import avatar from "../../assets/avatar.png";
 
 export default function Header({
   onOpenSidebar,
@@ -33,7 +34,7 @@ export default function Header({
           placeholder="Search for anything"
         />
         <button className={styles.searchBtn} type="button" aria-label="Search">
-          🔍
+          <Search size={16} />
         </button>
       </div>
 
@@ -50,11 +51,11 @@ export default function Header({
         </button>
         <div className={styles.profile}>
           <div className={styles.avatar} aria-hidden="true">
-            A
+            <img src={avatar} alt="User avatar" />
           </div>
           <span className={styles.name}>Adedeji</span>
           <span className={styles.caret} aria-hidden="true">
-            ▾
+            <ChevronDown size={16} />
           </span>
         </div>
       </div>
