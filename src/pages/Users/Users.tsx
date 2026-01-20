@@ -8,6 +8,7 @@ import usersDataIcon from "../../assets/icons/users-data.svg";
 import activeUSersIcon from "../../assets/icons/active-users-data.svg";
 import usersWithLoansIcon from "../../assets/icons/users-with-loans.svg";
 import usersWithSavingsIcon from "../../assets/icons/users-with-savings.svg";
+import { UserRoundCheck, Eye, UserPlus } from "lucide-react";
 
 type Filters = {
   organization: string;
@@ -443,6 +444,7 @@ export default function Users() {
                           role="menuitem"
                           onClick={() => setOpenMenuId(null)}
                         >
+                          <Eye size={16} />
                           View details
                         </button>
 
@@ -452,6 +454,7 @@ export default function Users() {
                           role="menuitem"
                           onClick={() => setOpenMenuId(null)}
                         >
+                          <UserPlus size={16} />
                           Blacklist user
                         </button>
 
@@ -461,6 +464,7 @@ export default function Users() {
                           role="menuitem"
                           onClick={() => setOpenMenuId(null)}
                         >
+                          <UserRoundCheck size={16} />
                           Activate user
                         </button>
                       </div>

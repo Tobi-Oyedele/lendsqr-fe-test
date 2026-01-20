@@ -27,7 +27,7 @@
 .cardsRow {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 14px;
+  gap: 24px;
 
   @include md {
     grid-template-columns: repeat(2, 1fr);
@@ -58,7 +58,7 @@
 }
 
 .card {
-  height: 120px;
+  height: 140px;
   border-radius: 8px;
   background: $color-surface;
   border: 1px solid $color-muted-light;
@@ -174,7 +174,6 @@
   font-weight: 600;
 }
 
-/* Use your variables */
 .status_Active {
   color: $color-active;
   background: rgba(57, 205, 98, 0.12);
@@ -290,41 +289,50 @@
 /* Actions menu */
 .actionsCell {
   position: relative;
-  display: flex;
-  justify-content: flex-end;
+}
+
+.moreBtn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  line-height: 1;
+  padding: 4px 8px;
 }
 
 .menu {
   position: absolute;
-  top: calc(100% + 6px);
   right: 0;
+  top: 100%;
+  margin-top: 8px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
   min-width: 180px;
-  background: $color-surface;
-  border: 1px solid $color-muted-light;
-  border-radius: 10px;
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
-  padding: 8px;
   z-index: 10;
 }
 
 .menuItem {
+  display: flex; // ✅ key
+  align-items: center; // ✅ vertical alignment
+  gap: 12px; // ✅ spacing between icon and text
+
   width: 100%;
-  border: 0;
-  background: transparent;
+  padding: 10px 14px;
+  background: none;
+  border: none;
   cursor: pointer;
-  text-align: left;
-  padding: 10px 10px;
-  border-radius: 8px;
+
   font-size: 14px;
-  color: $color-text;
+  color: #545f7d;
+  text-align: left;
 
   &:hover {
-    background: rgba(57, 205, 204, 0.06);
+    background-color: #f5f7fa;
   }
 
-  &:focus-visible {
-    outline: none;
-    box-shadow: 0 0 0 3px rgba(57, 205, 204, 0.2);
+  svg {
+    flex-shrink: 0; // ✅ prevents icon squishing
   }
 }
 
@@ -413,12 +421,10 @@
   color: $color-muted;
 }
 
-/* Make tableWrap the positioning context for the popover */
 .tableWrap {
   position: relative;
 }
 
-/* Header cell with a filter icon button */
 .headerCellWithFilter {
   display: inline-flex;
   align-items: center;
@@ -449,7 +455,6 @@
   }
 }
 
-/* Popover panel like the screenshot */
 .filterPopover {
   position: absolute;
   z-index: 50;
@@ -464,14 +469,12 @@
   box-shadow: 0 18px 40px rgba(0, 0, 0, 0.12);
 }
 
-/* Single column layout inside popover */
 .filterGridPopover {
   display: grid;
   grid-template-columns: 1fr;
   gap: 14px;
 }
 
-/* Buttons row inside popover */
 .filterActionsPopover {
   display: flex;
   gap: 12px;
