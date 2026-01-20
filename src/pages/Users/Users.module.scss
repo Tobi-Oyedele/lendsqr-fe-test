@@ -1,0 +1,479 @@
+@use "../../styles/variables" as *;
+@use "../../styles/mixins" as *;
+
+.page {
+  display: grid;
+  gap: 18px;
+}
+
+.state {
+  padding: 18px;
+  color: $color-muted;
+}
+
+.pageHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: 600;
+  color: $color-text;
+}
+
+/* ---- Summary Cards ---- */
+.cardsRow {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+
+  @include md {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include lg {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.cardIcon {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  flex: 0 0 auto;
+}
+
+/* card content */
+.cardLabel {
+  font-size: 12px;
+  font-weight: 700;
+  color: $color-muted;
+  text-transform: uppercase;
+
+  /* CHANGED (remove padding since card now has padding) */
+  padding: 0;
+  margin-top: 2px;
+}
+
+.card {
+  height: 120px;
+  border-radius: 8px;
+  background: $color-surface;
+  border: 1px solid $color-muted-light;
+  padding: 20px;
+  padding-bottom: 28px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+.cardValue {
+  font-size: 22px;
+  font-weight: 600;
+  color: $color-text;
+  margin-top: auto;
+}
+
+/* ---- Table container ---- */
+.tableWrap {
+  background: $color-surface;
+  border: 1px solid $color-muted-light;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+/* Desktop table visible from md */
+.desktopTable {
+  display: none;
+
+  @include md {
+    display: block;
+  }
+}
+
+.tableHeaderRow {
+  display: grid;
+  grid-template-columns: 140px 140px 1fr 160px 160px 120px 44px;
+  gap: 10px;
+
+  padding: 12px 16px;
+  font-size: 12px;
+  font-weight: 700;
+  color: $color-muted;
+  text-transform: uppercase;
+  border-bottom: 1px solid $color-muted-light;
+}
+
+.tableHeaderRow span {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Mobile cards visible below md */
+.mobileCards {
+  display: grid;
+  gap: 12px;
+  padding: 12px 12px 16px;
+
+  @include md {
+    display: none;
+  }
+}
+
+.tableBody {
+  display: grid;
+}
+
+.tableRow {
+  display: grid;
+  grid-template-columns: 140px 140px 1fr 160px 160px 120px 44px;
+  gap: 10px;
+  padding: 14px 16px;
+  border-bottom: 1px solid $color-muted-light;
+  align-items: center;
+}
+
+.cell {
+  font-size: 14px;
+  color: $color-muted;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.moreBtn {
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  color: $color-muted;
+  padding: 6px;
+  border-radius: 8px;
+
+  &:hover {
+    background: rgba(57, 205, 204, 0.06);
+  }
+
+  &:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(57, 205, 204, 0.2);
+  }
+}
+
+/* Status pill */
+.status {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+/* Use your variables */
+.status_Active {
+  color: $color-active;
+  background: rgba(57, 205, 98, 0.12);
+}
+.status_Inactive {
+  color: $color-muted;
+  background: $color-muted-light;
+}
+.status_Pending {
+  color: $color-pending;
+  background: rgba(233, 178, 0, 0.12);
+}
+.status_Blacklisted {
+  color: $color-error;
+  background: rgba(228, 3, 59, 0.12);
+}
+
+.tableToolbar {
+  padding: 12px 16px;
+  display: flex;
+  justify-content: flex-end;
+  border-bottom: 1px solid $color-muted-light;
+}
+
+.filterBtn {
+  height: 40px;
+  padding: 0 14px;
+  border-radius: 8px;
+  border: 1px solid $color-muted-light;
+  background: $color-surface;
+  cursor: pointer;
+  color: $color-text;
+  font-weight: 600;
+
+  &:hover {
+    background: rgba(57, 205, 204, 0.06);
+  }
+}
+
+.filterPanel {
+  padding: 18px 16px;
+  border-bottom: 1px solid $color-muted-light;
+  background: $color-surface;
+}
+
+.filterGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  max-width: 760px;
+}
+
+.filterField {
+  display: grid;
+  gap: 6px;
+
+  span {
+    font-size: 12px;
+    font-weight: 600;
+    color: $color-muted;
+  }
+
+  input,
+  select {
+    height: 40px;
+    border: 1px solid $color-muted-light;
+    border-radius: 8px;
+    padding: 0 12px;
+    outline: none;
+
+    &:focus {
+      box-shadow: 0 0 0 3px rgba(57, 205, 204, 0.15);
+      border-color: rgba(57, 205, 204, 0.7);
+    }
+  }
+}
+
+.filterActions {
+  display: flex;
+  gap: 12px;
+  margin-top: 14px;
+}
+
+.resetBtn {
+  height: 40px;
+  padding: 0 16px;
+  border-radius: 8px;
+  border: 1px solid $color-muted-light;
+  background: $color-surface;
+  cursor: pointer;
+  color: $color-text;
+  font-weight: 600;
+}
+
+.applyBtn {
+  height: 40px;
+  padding: 0 16px;
+  border-radius: 8px;
+  border: 1px solid $color-primary;
+  background: $color-primary;
+  cursor: pointer;
+  color: #fff;
+  font-weight: 700;
+}
+
+/* Empty state */
+.emptyState {
+  padding: 18px 16px;
+  color: $color-muted;
+  font-size: 14px;
+}
+
+/* Actions menu */
+.actionsCell {
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.menu {
+  position: absolute;
+  top: calc(100% + 6px);
+  right: 0;
+  min-width: 180px;
+  background: $color-surface;
+  border: 1px solid $color-muted-light;
+  border-radius: 10px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+  padding: 8px;
+  z-index: 10;
+}
+
+.menuItem {
+  width: 100%;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  text-align: left;
+  padding: 10px 10px;
+  border-radius: 8px;
+  font-size: 14px;
+  color: $color-text;
+
+  &:hover {
+    background: rgba(57, 205, 204, 0.06);
+  }
+
+  &:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(57, 205, 204, 0.2);
+  }
+}
+
+/* Pagination */
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 16px;
+  gap: 12px;
+}
+
+.paginationLeft {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: $color-muted;
+  font-size: 14px;
+}
+
+.pageSize {
+  height: 34px;
+  border: 1px solid $color-muted-light;
+  border-radius: 8px;
+  padding: 0 10px;
+  background: $color-surface;
+  color: $color-text;
+  outline: none;
+
+  &:focus {
+    box-shadow: 0 0 0 3px rgba(57, 205, 204, 0.15);
+    border-color: rgba(57, 205, 204, 0.7);
+  }
+}
+
+.paginationRight {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.pageBtn {
+  height: 34px;
+  width: 34px;
+  border-radius: 8px;
+  border: 1px solid $color-muted-light;
+  background: $color-surface;
+  cursor: pointer;
+  color: $color-text;
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  &:hover:not(:disabled) {
+    background: rgba(57, 205, 204, 0.06);
+  }
+}
+
+.pageNumber {
+  height: 34px;
+  min-width: 34px;
+  padding: 0 10px;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  background: transparent;
+  cursor: pointer;
+  color: $color-muted;
+  font-weight: 600;
+
+  &:hover {
+    background: rgba(57, 205, 204, 0.06);
+    color: $color-text;
+  }
+}
+
+.pageNumberActive {
+  color: $color-text;
+  border-color: $color-muted-light;
+  background: rgba(57, 205, 204, 0.06);
+}
+
+.dots {
+  padding: 0 6px;
+  color: $color-muted;
+}
+
+/* Make tableWrap the positioning context for the popover */
+.tableWrap {
+  position: relative;
+}
+
+/* Header cell with a filter icon button */
+.headerCellWithFilter {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+}
+
+.headerFilterBtn {
+  height: 28px;
+  width: 28px;
+  border: 0;
+  background: transparent;
+  border-radius: 8px;
+  cursor: pointer;
+  color: $color-muted;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  &:hover {
+    background: rgba(57, 205, 204, 0.06);
+    color: $color-text;
+  }
+
+  &:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(57, 205, 204, 0.2);
+  }
+}
+
+/* Popover panel like the screenshot */
+.filterPopover {
+  position: absolute;
+  z-index: 50;
+  width: 270px;
+
+  background: $color-surface;
+  border: 1px solid $color-muted-light;
+  border-radius: 10px;
+
+  padding: 18px 16px;
+
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.12);
+}
+
+/* Single column layout inside popover */
+.filterGridPopover {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+}
+
+/* Buttons row inside popover */
+.filterActionsPopover {
+  display: flex;
+  gap: 12px;
+  margin-top: 16px;
+}
