@@ -2,7 +2,7 @@
 
 This repository contains a frontend application built as part of the Lendsqr frontend engineering assessment.
 
-The project is built using **React**, **TypeScript**, and **SCSS**, with a focus on clean architecture, scalability, responsiveness, and best practices.
+The project is built using **React**, **TypeScript**, and **SCSS (CSS Modules)**, with a focus on clean architecture, scalability, responsiveness, and maintainable UI patterns.
 
 ## Tech Stack
 
@@ -12,16 +12,24 @@ The project is built using **React**, **TypeScript**, and **SCSS**, with a focus
 - React Router
 - Vite
 
+## Features Implemented
+
+- Authentication UI (Login page)
+- Shared dashboard layout
+- Users page with data rendering (500 records from mock API)
+- Column-based table filtering (Organization)
+- User details page (data persistence via localStorage / IndexedDB)
+- Responsive layout across screen sizes
+
 ## Project Scope
 
 - Login page
 - Dashboard
-- Users page (data from mock API with 500 records)
-- User details page (using localStorage / IndexedDB)
+- Users page
+- User details page
 
 ## Getting Started
 
 ```bash
 npm install
 npm run dev
-```
