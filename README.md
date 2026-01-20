@@ -19,7 +19,6 @@ The project is built using **React**, **TypeScript**, and **SCSS (CSS Modules)**
 - Users page with data rendering (500 records from mock API)
 - Column-based table filtering (Organization)
 - User details page (data persistence via localStorage / IndexedDB)
-- Responsive layout across screen sizes
 
 ## Project Scope
 
