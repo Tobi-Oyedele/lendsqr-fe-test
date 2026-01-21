@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useMemo } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import { useUsers } from "../../hooks/useUsers";
+import { useUsers } from "../../hooks/useUsers.ts";
 import { readCachedUser } from "../../utils/userCache";
 import type { User } from "../../types/users";
 import styles from "./UserDetails.module.scss";

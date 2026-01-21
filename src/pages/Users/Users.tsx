@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { useEffect, useMemo, useRef, useState } from "react";
-import { useUsers } from "../../hooks/useUsers";
+import { useUsers } from "../../hooks/useUsers.ts";
 import styles from "./Users.module.scss";
 import { formatDate } from "../../utils/format";
 import TableHeaderCell from "../../components/TableHeaderCell/TableHeaderCell";
