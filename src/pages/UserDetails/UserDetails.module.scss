@@ -22,13 +22,25 @@
 /* ===== SUMMARY CARD ===== */
 .summaryCard {
   background: #fff;
-  border-radius: 8px;
-  padding: 30px;
-  display: grid;
-  grid-template-columns: auto auto 1fr;
-  gap: 40px;
-  align-items: center;
+  padding: 30px 30px 0;
   margin-bottom: 32px;
+}
+
+.summaryTop {
+  display: grid;
+  grid-template-columns: 1fr 0.8fr 1fr;
+  align-items: center;
+  column-gap: 0;
+  padding-bottom: 10px;
+}
+
+.summaryBlock {
+  min-width: 0;
+}
+
+.summaryDivider {
+  border-left: 1px solid #e5e9f2;
+  padding-left: 40px;
 }
 
 .left {
@@ -62,8 +74,13 @@
 .mid {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   gap: 8px;
+  color: #545f7d;
   font-size: 14px;
+}
+
+.tierLabel {
   color: #545f7d;
 }
 
@@ -73,7 +90,11 @@
 }
 
 .right {
-  text-align: right;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 6px;
+  text-align: left;
 }
 
 .balance {
@@ -117,29 +138,39 @@
 /* ===== TABS ===== */
 .tabs {
   display: flex;
-  gap: 32px;
-  border-bottom: 1px solid #e5e9f2;
-  margin-bottom: 32px;
+  gap: 70px;
+  padding-top: 14px;
+  margin-top: 6px;
+  padding-bottom: 0;
 }
 
 .tab {
-  padding-bottom: 12px;
+  padding: 14px 0;
   font-size: 16px;
   color: #545f7d;
   background: none;
   border: none;
   cursor: pointer;
+  position: relative;
 }
 
 .active {
   color: #39cdcc;
-  border-bottom: 2px solid #39cdcc;
+}
+
+.active::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  width: 100%;
+  background: #39cdcc;
 }
 
 /* ===== DETAILS CARD ===== */
 .detailsCard {
   background: #fff;
-  border-radius: 8px;
   padding: 30px;
 }
 
@@ -168,6 +199,7 @@
   font-size: 16px;
   color: #213f7d;
   font-weight: 500;
+  white-space: nowrap;
 }
 
 .divider {
@@ -193,4 +225,11 @@
   display: flex;
   align-items: center;
   gap: 16px;
+}
+
+.notProvided {
+  font-size: 14px;
+  color: #545f7d;
+  text-align: center;
+  padding: 40px 0;
 }
