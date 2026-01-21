@@ -1,5 +1,5 @@
 import { NavLink } from "react-router-dom";
-import styles from "./Sidebar.module.scss";
+import styles from "./SideBar.module.scss";
 import { navItems, topNavItems } from "./navItems";
 import { ChevronDown } from "lucide-react";
 import { organizationIcon } from "../../assets/icons";
