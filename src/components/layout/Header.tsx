@@ -20,7 +20,9 @@ export default function Header({
         </button>
       </div>
 
-      <img src={logo} alt="Lendsqr logo" className={styles.logo} />
+      <a href="/">
+        <img src={logo} alt="Lendsqr logo" className={styles.logo} />
+      </a>
 
       <div className={styles.spacer} aria-hidden="true" />
 

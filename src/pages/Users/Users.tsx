@@ -1,15 +1,15 @@
+import { useNavigate } from "react-router-dom";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { useUsers } from "../../hooks/useUsers";
 import styles from "./Users.module.scss";
 import { formatDate } from "../../utils/format";
 import TableHeaderCell from "../../components/TableHeaderCell/TableHeaderCell";
-import { useEffect, useMemo, useRef, useState } from "react";
 import type { User, UserStatus } from "../../types/users";
 import usersDataIcon from "../../assets/icons/users-data.svg";
 import activeUSersIcon from "../../assets/icons/active-users-data.svg";
 import usersWithLoansIcon from "../../assets/icons/users-with-loans.svg";
 import usersWithSavingsIcon from "../../assets/icons/users-with-savings.svg";
 import { UserRoundCheck, Eye, UserPlus } from "lucide-react";
-import { useNavigate } from "react-router-dom";
 import { cacheUser } from "../../utils/userCache";
 
 type Filters = {
@@ -123,7 +123,6 @@ export default function Users() {
     return () => document.removeEventListener("mousedown", onDocClick);
   }, [filtersOpen]);
 
-  // Reposition popover when opening (and on resize)
   useEffect(() => {
     function positionPopover() {
       if (!filtersOpen) return;
@@ -134,7 +133,6 @@ export default function Users() {
       const wrapRect = wrap.getBoundingClientRect();
       const orgRect = org.getBoundingClientRect();
 
-      // place under org header cell
       const left = orgRect.left - wrapRect.left;
       const top = orgRect.bottom - wrapRect.top + 8;
 
@@ -146,7 +144,6 @@ export default function Users() {
     return () => window.removeEventListener("resize", positionPopover);
   }, [filtersOpen]);
 
-  // Reset to page 1 when applied filters change
   useEffect(() => {
     setPage(1);
   }, [applied]);
@@ -183,7 +180,7 @@ export default function Users() {
   const startIndex = (safePage - 1) * pageSize;
   const endIndex = Math.min(startIndex + pageSize, total);
 
-  const visibleRows = useMemo(() => {
+  const visibleRows = useMemo<User[]>(() => {
     return filtered.slice(startIndex, startIndex + pageSize);
   }, [filtered, startIndex, pageSize]);
 

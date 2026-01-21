@@ -11,7 +11,7 @@ export function useUsers() {
     const ac = new AbortController();
 
     fetchUsers(ac.signal)
-      .then((users) => setData(users))
+      .then((users: User[]) => setData(users))
       .catch((e) => {
         if (ac.signal.aborted) return;
         setError(e instanceof Error ? e.message : "Failed to load users");
