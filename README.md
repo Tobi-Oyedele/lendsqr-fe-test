@@ -1,10 +1,12 @@
 # Lendsqr Frontend Engineering Assessment
 
-This repository contains a frontend application built as part of the Lendsqr frontend engineering assessment.
+This repository contains a frontend dashboard application built as part of the **Lendsqr Frontend Engineering Assessment**.
 
-The project is built using **React**, **TypeScript**, and **SCSS (CSS Modules)**, with a focus on clean architecture, scalability, responsiveness, and maintainable UI patterns.
+The application demonstrates the implementation of a scalable and maintainable frontend architecture using **React**, **TypeScript**, and **SCSS (CSS Modules)**, with attention to responsiveness and reusable UI patterns.
 
-## Tech Stack
+---
+
+## 🛠 Tech Stack
 
 - React
 - TypeScript
@@ -12,13 +14,19 @@ The project is built using **React**, **TypeScript**, and **SCSS (CSS Modules)**
 - React Router
 - Vite
 
+---
+
 ## Features Implemented
 
 - Authentication UI (Login page)
 - Shared dashboard layout
-- Users page with data rendering (500 records from mock API)
+- Users page displaying **500 records** from a mock API
 - Column-based table filtering (Organization)
-- User details page (data persistence via localStorage / IndexedDB)
+- User details page with persistent data using **localStorage / IndexedDB**
+- Reusable components and custom hooks
+- Responsive layout for desktop and mobile screens
+
+---
 
 ## Project Scope
 
@@ -27,8 +35,10 @@ The project is built using **React**, **TypeScript**, and **SCSS (CSS Modules)**
 - Users page
 - User details page
 
-## Getting Started
+---
 
+## ⚙️ Getting Started
+
+### Installation
 ```bash
 npm install
-npm run dev
