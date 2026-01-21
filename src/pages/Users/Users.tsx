@@ -209,15 +209,15 @@ export default function Users() {
 
   if (loading) return <div className={styles.state}>Loading users…</div>;
   if (error) return <div className={styles.state}>Error: {error}</div>;
-  if (!data) return null;
+
+  const users: User[] = data ?? [];
 
   // Cards
   const fmt = new Intl.NumberFormat();
+  const totalUsers = users.length;
+  const activeUsers = users.filter((u) => u.status === "Active").length;
 
-  const totalUsers = data.length;
-  const activeUsers = data.filter((u) => u.status === "Active").length;
-
-  const usersWithSavings = data.filter(
+  const usersWithSavings = users.filter(
     (u) => (u.accountBalance ?? 0) > 0,
   ).length;
 
@@ -226,7 +226,7 @@ export default function Users() {
     return Number.isFinite(n) ? n : 0;
   };
 
-  const usersWithLoans = data.filter((u) => {
+  const usersWithLoans = users.filter((u) => {
     const repayment = parseMoney(u.details?.employment?.loanRepayment);
     return repayment > 0;
   }).length;
