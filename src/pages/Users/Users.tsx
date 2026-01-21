@@ -9,6 +9,8 @@ import activeUSersIcon from "../../assets/icons/active-users-data.svg";
 import usersWithLoansIcon from "../../assets/icons/users-with-loans.svg";
 import usersWithSavingsIcon from "../../assets/icons/users-with-savings.svg";
 import { UserRoundCheck, Eye, UserPlus } from "lucide-react";
+import { useNavigate } from "react-router-dom";
+import { cacheUser } from "../../utils/userCache";
 
 type Filters = {
   organization: string;
@@ -68,6 +70,7 @@ function getPageRange(current: number, max: number) {
 
 export default function Users() {
   const { data, loading, error } = useUsers();
+  const navigate = useNavigate();
 
   // Filters popover
   const [filtersOpen, setFiltersOpen] = useState(false);
@@ -442,7 +445,11 @@ export default function Users() {
                           type="button"
                           className={styles.menuItem}
                           role="menuitem"
-                          onClick={() => setOpenMenuId(null)}
+                          onClick={() => {
+                            cacheUser(u);
+                            setOpenMenuId(null);
+                            navigate(`/users/${u.id}`);
+                          }}
                         >
                           <Eye size={16} />
                           View details

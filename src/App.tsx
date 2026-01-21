@@ -4,6 +4,7 @@ import ProtectedRoute from "./components/layout/ProtectedRoute";
 import AppLayout from "./components/layout/AppLayout";
 import DashBoard from "./components/dashboard/DashBoard";
 import Users from "./pages/Users/Users";
+import UserDetails from "./pages/UserDetails/UserDetails";
 
 export default function App() {
   return (
@@ -21,8 +22,7 @@ export default function App() {
         <Route path="/dashboard" element={<DashBoard />} />
         <Route path="/users" element={<Users />} />
 
-        {/* later */}
-        {/* <Route path="/users/:id" element={<UserDetails />} /> */}
+        <Route path="/users/:id" element={<UserDetails />} />
       </Route>
 
       {/* optional fallback */}

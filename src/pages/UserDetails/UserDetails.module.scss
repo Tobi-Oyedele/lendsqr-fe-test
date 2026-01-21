@@ -1,0 +1,196 @@
+.page {
+  padding: 40px;
+  background: #f7f9fc;
+}
+
+.backBtn {
+  background: none;
+  border: none;
+  color: #545f7d;
+  font-size: 14px;
+  cursor: pointer;
+  margin-bottom: 24px;
+}
+
+.title {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 500;
+  color: #213f7d;
+}
+
+/* ===== SUMMARY CARD ===== */
+.summaryCard {
+  background: #fff;
+  border-radius: 8px;
+  padding: 30px;
+  display: grid;
+  grid-template-columns: auto auto 1fr;
+  gap: 40px;
+  align-items: center;
+  margin-bottom: 32px;
+}
+
+.left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: #e5e9f2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #213f7d;
+}
+
+.name {
+  font-size: 22px;
+  font-weight: 500;
+  color: #213f7d;
+}
+
+.code {
+  font-size: 14px;
+  color: #545f7d;
+}
+
+.mid {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 14px;
+  color: #545f7d;
+}
+
+.stars {
+  color: #f3aa00;
+  font-size: 16px;
+}
+
+.right {
+  text-align: right;
+}
+
+.balance {
+  font-size: 22px;
+  font-weight: 500;
+  color: #213f7d;
+}
+
+.bank {
+  font-size: 12px;
+  color: #545f7d;
+}
+
+.actions {
+  display: flex;
+  gap: 12px;
+}
+
+.blacklistBtn {
+  border: 1px solid #e4033b;
+  color: #e4033b;
+  background: transparent;
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-size: 14px;
+  cursor: pointer;
+  height: 45px;
+}
+
+.activateBtn {
+  border: 1px solid #39cdcc;
+  color: #39cdcc;
+  background: transparent;
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-size: 14px;
+  cursor: pointer;
+  height: 45px;
+}
+
+/* ===== TABS ===== */
+.tabs {
+  display: flex;
+  gap: 32px;
+  border-bottom: 1px solid #e5e9f2;
+  margin-bottom: 32px;
+}
+
+.tab {
+  padding-bottom: 12px;
+  font-size: 16px;
+  color: #545f7d;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.active {
+  color: #39cdcc;
+  border-bottom: 2px solid #39cdcc;
+}
+
+/* ===== DETAILS CARD ===== */
+.detailsCard {
+  background: #fff;
+  border-radius: 8px;
+  padding: 30px;
+}
+
+.sectionTitle {
+  font-size: 16px;
+  font-weight: 500;
+  color: #213f7d;
+  margin-bottom: 24px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px 40px;
+  margin-bottom: 24px;
+}
+
+.infoLabel {
+  font-size: 12px;
+  text-transform: uppercase;
+  color: #545f7d;
+  margin-bottom: 6px;
+}
+
+.infoValue {
+  font-size: 16px;
+  color: #213f7d;
+  font-weight: 500;
+}
+
+.divider {
+  border: none;
+  border-top: 1px solid #e5e9f2;
+  margin: 32px 0;
+}
+
+.guarantorGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px 40px;
+}
+
+.pageHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 40px;
+}
+
+.headerActions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
