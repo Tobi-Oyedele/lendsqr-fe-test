@@ -150,7 +150,7 @@ export default function Users() {
 
   const filtered = useMemo<User[]>(() => {
     if (!data) return [];
-    return data.filter((u) => {
+    return data.filter((u: User) => {
       if (
         applied.organization &&
         !includes(u.organization, applied.organization)
