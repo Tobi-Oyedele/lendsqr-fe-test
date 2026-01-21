@@ -19,7 +19,7 @@ export default function UserDetails() {
   const user: User | null = useMemo(() => {
     if (!id) return null;
 
-    const fromList = data?.find((u) => u.id === id);
+    const fromList = data?.find((u: User) => u.id === id);
     if (fromList) return fromList;
 
     const cached = readCachedUser();

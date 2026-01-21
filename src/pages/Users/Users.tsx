@@ -404,7 +404,7 @@ export default function Users() {
                 No users match your filters.
               </div>
             ) : (
-              visibleRows.map((u) => (
+              visibleRows.map((u: User) => (
                 <div key={u.id} className={styles.tableRow}>
                   <span className={styles.cell}>{u.organization}</span>
                   <span className={styles.cell}>{u.username}</span>
